@@ -1,4 +1,7 @@
 import React from 'react';
+import SidebarGroup from './SidebarGroup';
+
+import navigation from '../../menu-list';
 
 import './Sidebar.css';
 
@@ -11,7 +14,9 @@ const Sidebar = () => {
         </div>
         <div className="navigation">
           <div className="navigation__items">
-            menus
+            {navigation.menu.map(item => (
+              <SidebarGroup key={item.id} menu={item} />
+            ))}
           </div>
         </div>
       </div>

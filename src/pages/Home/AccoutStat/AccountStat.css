@@ -1,0 +1,11 @@
+.account__stat {
+  padding: 40px 0;
+  background: chartreuse;
+}
+
+.account__statContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
