@@ -50,7 +50,7 @@ const TopNavbar = () => {
           </div>
         </nav>
       </header>
-      <Sidebar />
+      {/* <Sidebar /> */}
     </>
   )
 }

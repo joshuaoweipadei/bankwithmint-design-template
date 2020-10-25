@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import TopNavbar from './components/TopNavbar';
 import Home from './pages/Home';
+import Sidebar from './components/SideBar';
 
 function App() {
   const { pathname } = useLocation(); 
@@ -12,6 +13,7 @@ function App() {
         <TopNavbar />
         <div className="app">
           <div className="app__container">
+            <Sidebar />
             <Switch>
               <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
               <Route path="/" component={Home} />
