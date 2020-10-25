@@ -17,13 +17,31 @@ const AccountStat = () => {
           </div>
         </div>
         <div className="account__statCard">
-          jkl
+          <div className="account__stat__details">
+            <span>Daily Transaction Value</span>
+            <h2><strike>N</strike>4,000,000</h2>
+          </div>
+          <div className="account__stat__imgContainer">
+            <img src={signal} alt="img"/>
+          </div>
         </div>
         <div className="account__statCard">
-          oiuy
+          <div className="account__stat__details">
+            <span>Total Transaction Volume</span>
+            <h2>452,000</h2>
+          </div>
+          <div className="account__stat__imgContainer">
+            <img src={signal} alt="img"/>
+          </div>
         </div>
         <div className="account__statCard">
-          qwe
+          <div className="account__stat__details">
+            <span>Total Transaction Value</span>
+            <h2><strike>N</strike>4,000,000</h2>
+          </div>
+          <div className="account__stat__imgContainer">
+            <img src={signal} alt="img"/>
+          </div>
         </div>
       </div>
     </div>

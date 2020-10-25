@@ -1,0 +1,30 @@
+.chart {
+  width: 100%;
+}
+
+.chart__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 34px;
+}
+
+.chart__graph {
+  background: green;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.chart__transaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 380px;
+  width: 100%;
+  background: greenyellow;
+}
+
+.chart__transaction > .chart__orders {
+  padding: 20px;
+  background: hotpink;
+}
