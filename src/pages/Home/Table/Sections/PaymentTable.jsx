@@ -7,7 +7,8 @@ import { BsCircleFill } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
 import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 
-import imgIcon from '../../../../images/svg/svg3.svg';
+import { Data } from './Data';
+// import imgIcon from '../../../../images/svg/svg3.svg';
 
 import './General.scss';
 
@@ -35,171 +36,7 @@ const GlobalFilter = ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) 
 }
 
 const PaymentTable = () => {
-  const data = useMemo(() => [
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Un-Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Un-Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Un-Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Un-Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Un-Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Un-Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Un-Reconcilled'
-      },
-      {
-        type: 'Apple Mac Book 15" 250 SSD 12GB',
-        price: 73430,
-        tnx: 1234567890,
-        time: '12:30',
-        status: 'Pending'
-      }
-    ],
-    [],
-  );
+  const data = useMemo(() => Data, []);
 
   const columns = useMemo(() => [
       {
@@ -335,7 +172,7 @@ const PaymentTable = () => {
         </tbody>
       </table>
       <div className="table__pagination">
-        <div>
+        <div className="pagination__text">
           Showing{" "} {pageIndex + 1} to {pageSize} of {pageOptions.length} entries
         </div>
         <ul className="pagination">

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect, useLocation } from 'r
 import TopNavbar from './components/TopNavbar';
 import Home from './pages/Home';
 import Sidebar from './components/SideBar';
+import Payments from './pages/Payments'
 
 function App() {
   const { pathname } = useLocation(); 
@@ -16,7 +17,9 @@ function App() {
             <Sidebar />
             <Switch>
               <Redirect from="/:url*(/+)" to={pathname.slice(0, -1)} />
-              <Route path="/" component={Home} />
+              <Route exact path="/" component={Home} />
+              <Route path="/payments" component={Payments} />
+              <Redirect from="*" to="/" />
             </Switch>
           </div>
         </div>
