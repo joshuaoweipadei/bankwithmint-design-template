@@ -22,7 +22,7 @@
 .search__content {
   display: flex;
   align-items: center;
-  max-width: 300px;
+  max-width: 350px;
   width: 100%;
   /* background: #fff; */
   padding: 0 10px;
@@ -34,7 +34,7 @@
   border: none;
   border-bottom: 2px solid #c5c2c2;
   width: 100%;
-  font-size: 14px;
+  font-size: 15px;
   padding: 10px;
   color: #333333;
   background: transparent;
@@ -48,6 +48,7 @@
 
 .search__content > .search__icon {
   color: #afaeae;
+  font-size: 15px;
 }
 
 .show__status {

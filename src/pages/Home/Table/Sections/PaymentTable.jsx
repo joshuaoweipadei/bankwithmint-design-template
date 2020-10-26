@@ -5,6 +5,7 @@ import ShowDropdown from './ShowDropdown';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import { BsCircleFill } from 'react-icons/bs';
 import { IoIosArrowDown } from 'react-icons/io';
+import { GoArrowLeft, GoArrowRight } from 'react-icons/go';
 
 import imgIcon from '../../../../images/svg/svg3.svg';
 
@@ -27,7 +28,7 @@ const GlobalFilter = ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) 
           setValue(e.target.value);
           onChange(e.target.value);
         }}
-        placeholder={`${count} records...`}
+        placeholder={`${count} records. . .`}
       />
     </div>
   )
@@ -193,7 +194,7 @@ const PaymentTable = () => {
     <>      
       <div className="table__topRow">
         <div className="show__pageSize">
-          <ShowDropdown list={[2, 3, 6, 15, 20, 30]} pageSize={pageSize} setPageSize={setPageSize} minWidth={69} />
+          <ShowDropdown list={[2, 3, 6, 15, 20, 30]} pageSize={pageSize} setPageSize={setPageSize} minWidth={70} />
         </div>
         <div>Page{" "}{pageIndex + 1} of {pageOptions.length} Payments</div>
         <GlobalFilter
@@ -236,32 +237,25 @@ const PaymentTable = () => {
         </tbody>
       </table>
       <div className="table__pagination">
+        <div>
+          Showing{" "} {pageIndex + 1} to {pageSize} of {pageOptions.length} entries
+        </div>
         <ul className="pagination">
           <li className="page__item" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
-            <a className="page__link">First</a>
+            <a className="page__link">Pervious</a>
           </li>
           <li className="page__item" onClick={() => previousPage()} disabled={!canPreviousPage}>
-            <a className="page__link">{"<"}</a>
+            <a className="page__link"><GoArrowLeft className="page__icon" /></a>
           </li>
-
           <li className="page__item" onClick={() => nextPage()} disabled={!canNextPage}>
-            <a className="page__link">{">"}</a>
+            <a className="page__link"><GoArrowRight className="page__icon" /></a>
           </li>
           <li className="page__item" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-            <a className="page__link">Last</a>
+            <a className="page__link">Next</a>
           </li>
           <li className="page__item">
-            <a className="page__link">
-              Page{" "}
-              <strong>
-                {pageIndex + 1} of {pageOptions.length}
-              </strong>{" "}
-            </a>
-          </li>
-          <li className="page__item">
-            <a className="page__link">
+            {/* <a className="page__link"> */}
               <input
-                className="form-control"
                 type="number"
                 defaultValue={pageIndex + 1}
                 onChange={e => {
@@ -270,7 +264,7 @@ const PaymentTable = () => {
                 }}
                 style={{ width: '100px', height: '20px' }}
               />
-            </a>
+            {/* </a> */}
           </li>{' '}
         </ul>
       </div>
