@@ -13,6 +13,7 @@
   background: green;
   width: 100%;
   margin-right: 10px;
+  margin-bottom: 8px;
 }
 
 .chart__transaction {
@@ -21,10 +22,51 @@
   justify-content: space-between;
   max-width: 380px;
   width: 100%;
-  background: greenyellow;
 }
 
-.chart__transaction > .chart__orders {
+.chart__orders {
   padding: 20px;
-  background: hotpink;
+  background: #fff;
+  border-top: 0.1px solid #e6f7fc;
+  margin-bottom: 8px;
+}
+
+.chart__orders > h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.chart__orders > .chart__orders__progress {
+  width: 100%;
+  height: 5px;
+  background: #f3cb81;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.chart__orders > .chart__orders__progress > .chart__orders__progressPrecentage {
+  width: 80%;
+  height: 5px;
+  background: #19a019;
+  border-radius: 6px;
+}
+
+.chart__orders > .text {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #474747;
+}
+
+.chart__orders > .text > .pending {
+  color: #eebb5d;
+}
+
+.chart__orders > .text > .reconcilled {
+  color: #1bad1b;
+}
+
+.chart__orders > .text > .total {
+  color: #0423d6;
 }

@@ -3,50 +3,17 @@ import AccountStat from './AccoutStat'
 import Chart from './Chart'
 
 import './Home.css'
+import Table from './Table'
 
 const Home = () => {
   return (
-      <div className="home">
-        <div className="home__container">
+    <div className="home">
+      <div className="home__container">
         <AccountStat />
         <Chart />
-          <div>hbjn</div>
-          <div>plllp</div>
-          <div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div><div>hbjn</div>
-          <div>plllp</div>
-        </div>
+        <Table />
       </div>
+    </div>
   )
 }
 

@@ -10,16 +10,22 @@ const Chart = () => {
         </div>
         <div className="chart__transaction">
           <div className="chart__orders">
-            <h4>Order</h4>
-            <div>
-              <div></div>
+            <h4>Orders</h4>
+            <div className="chart__orders__progress">
+              <div className="chart__orders__progressPrecentage"></div>
             </div>
-            <span>Pending Orders: <b>20</b></span>
-            <span>Reconcilled Orders: <b>80</b></span>
-            <span>Total Orders: <b>100</b></span>
+            <div className="text">Pending Orders: <b className="pending">20</b></div>
+            <div className="text">Reconcilled Orders: <b className="reconcilled">80</b></div>
+            <div className="text">Total Orders: <b className="total">100</b></div>
           </div>
-          <div className="chart__paymnents">
-            payment
+          <div className="chart__orders">
+            <h4>Payments</h4>
+            <div className="chart__orders__progress">
+              <div className="chart__orders__progressPrecentage"></div>
+            </div>
+            <div className="text">Un-reconcilled Payments: <b className="pending">20</b></div>
+            <div className="text">Reconcilled Payments: <b className="reconcilled">80</b></div>
+            <div className="text">Total Payments: <b className="total">100</b></div>
           </div>
         </div>
       </div>
