@@ -219,17 +219,19 @@
       display: flex;
       align-items: center;
       padding: 8px 10px;
-      border-top: 1px solid #9c9c9c;
-      border-bottom: 1px solid #9c9c9c;
-      border-left: 1px solid #9c9c9c;
+      border-top: 1px solid #bdc3cf;
+      border-bottom: 1px solid #bdc3cf;
+      border-left: 1px solid #bdc3cf;
       cursor: pointer;
 
       &:hover {
+        border: 1px solid #2020ff;
         background: #2020ff;
         color: #fff;
       }
 
       &.active {
+        border: 1px solid #2020ff;
         background: #2020ff;
         color: #fff;
       }
@@ -246,7 +248,7 @@
     }
 
     .page__item:last-child{
-      border-right: 1px solid #9c9c9c;
+      border-right: 1px solid #bdc3cf;
     }
 
     .page__input {

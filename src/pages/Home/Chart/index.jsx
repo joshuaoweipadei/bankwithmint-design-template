@@ -1,12 +1,15 @@
 import React from 'react';
 import './Chart.css';
+import ChartGraph from './ChartGraph';
 
 const Chart = () => {
   return (
     <div className="chart">
       <div className="chart__container">
         <div className="chart__graph">
-            dfdsf
+          <div className="chart__graphContainer">
+            <ChartGraph />
+          </div>
         </div>
         <div className="chart__transaction">
           <div className="chart__orders">
