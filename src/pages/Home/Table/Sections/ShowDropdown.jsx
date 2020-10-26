@@ -34,32 +34,51 @@ const ShowDropdown = (props) => {
   }
 
   const chooseItem = (value) => {
-    if(labelItem !== value){
-      setLabelItem(value)
+    if(props.pageSize && props.setPageSize){
+      props.setPageSize(value)
+    } else {
+      if(labelItem !== value){
+        setLabelItem(value)
+      }
     }
     hideDropdown()
   }
 
-  const renderDataDropDown = (item, index) => {
-    const { value, label } = typeDropdown ? { value: index, label: item } : item;
-    return (
-      <li
-        key={index}
-        value={value}
-        onClick={() => chooseItem(label)}
-      >
-        <a>{label}</a>
-      </li>
-    )
+  let renderDataDropDown;
+  if(props.pageSize && props.setPageSize){
+    renderDataDropDown = (item, index) => {
+      return (
+        <li
+          key={index}
+          value={props.pageSize}
+          onClick={() => chooseItem(item)}
+        >
+          <a>{item}</a>
+        </li>
+      )
+    }
+  } else{
+    renderDataDropDown = (item, index) => {
+      const { value, label } = typeDropdown ? { value: index, label: item } : item;
+      return (
+        <li
+          key={index}
+          value={value}
+          onClick={() => chooseItem(label)}
+        >
+          <a>{label}</a>
+        </li>
+      )
+    }
   }
-
+  
   return (
     <div className={`show__dropdown ${isOpen ? 'open' : ''}`}>
       <button className="show__dropdownToggle" type="button" onClick={showDropdown}>
-        {labelItem}
+        {props.pageSize ? props.pageSize : labelItem}
         <span className="caret"></span>
       </button>
-      <ul className="show__dropdownMenu">
+      <ul className="show__dropdownMenu" style={{minWidth: props.minWidth}}>
         {props.list.map(renderDataDropDown)}
       </ul>
     </div>

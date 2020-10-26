@@ -14,7 +14,7 @@
 
 .table__topRow {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -36,7 +36,7 @@
   width: 100%;
   font-size: 14px;
   padding: 10px;
-  color: #afaeae;
+  color: #333333;
   background: transparent;
 }
 
@@ -50,15 +50,22 @@
   color: #afaeae;
 }
 
-.show__all {
+.show__status {
   max-width: 200px;
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-.show__all > span {
+.show__status > span {
   margin-right: 7px;
   font-size:  15px;
   font-weight: 400;
+}
+
+.show__pageSize {
+  max-width: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }

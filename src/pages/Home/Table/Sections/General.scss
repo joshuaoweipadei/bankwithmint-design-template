@@ -1,6 +1,9 @@
+/****************
+ Table Show Dropdown
+ ****************/
 .show__dropdown {
   position: relative;
-  max-width: 200px;
+  // max-width: 100px;
   width: 100%;
 
   &.open > .show__dropdownMenu {
@@ -43,7 +46,6 @@
     right: 0;
     z-index: 1000;
     display: none;
-    min-width: 160px;
     padding: 5px 0;
     margin: -2px 0 0 0;
     font-size: 14px;
@@ -53,11 +55,13 @@
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    height: 60px;
+    overflow-y: scroll;
    
     li {
       cursor: pointer;
       :hover {
-        background: #ddd;
+        background: #dfe3eb;
       }
       & > a {
         display: block;
@@ -73,6 +77,9 @@
   }  
 }
 
+/****************
+ Table
+ ****************/
 .table__data {
   width: 100%;
   border: none;
@@ -167,5 +174,28 @@
     display: flex;
     align-items: center;
     margin: auto;
+  }
+}
+
+/****************
+ Table Pagination
+ ****************/
+.table__pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+
+  .pagination {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .page__item {
+      padding: 8px 14px;
+      border: 1px solid;
+      cursor: pointer;
+    }
   }
 }
