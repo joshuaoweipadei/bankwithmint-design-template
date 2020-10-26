@@ -43,14 +43,14 @@ export const navigation = [
         id: 'un-reconcilled-payments',
         title: 'Un - Reconcilled Payments',
         type: 'item',
-        url: '/un-reconcilled-payments',
+        url: '/payments/un-reconcilled-payments',
         icon: <RiWallet2Fill />
       },
       {
         id: 'manual-settlement',
         title: 'Manual Settlement',
         type: 'item',
-        url: '/manual-settlement',
+        url: '/payments/manual-settlement',
         icon: <FaRegDotCircle />
       }
     ]
