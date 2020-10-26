@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidebar from '../SideBar';
 import { BsBell } from 'react-icons/bs';
 import { BiSearchAlt2 } from 'react-icons/bi';
 
@@ -50,7 +49,6 @@ const TopNavbar = () => {
           </div>
         </nav>
       </header>
-      {/* <Sidebar /> */}
     </>
   )
 }

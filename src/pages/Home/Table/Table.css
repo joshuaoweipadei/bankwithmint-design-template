@@ -65,8 +65,13 @@
 }
 
 .show__pageSize {
-  max-width: 70px;
+  max-width: 310px;
   width: 100%;
   display: flex;
   align-items: center;
+}
+
+.show__pageSize > .text {
+  width: 100%;
+  margin-left: 4px;
 }

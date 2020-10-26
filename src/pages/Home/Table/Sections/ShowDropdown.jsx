@@ -71,9 +71,10 @@ const ShowDropdown = (props) => {
       )
     }
   }
-  
+
   return (
     <div className={`show__dropdown ${isOpen ? 'open' : ''}`}>
+      {props.pageSize ? <span style={{marginRight: '5px'}}>Showing</span> : null}
       <button className="show__dropdownToggle" type="button" onClick={showDropdown}>
         {props.pageSize ? props.pageSize : labelItem}
         <span className="caret"></span>

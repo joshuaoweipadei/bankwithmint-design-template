@@ -34,27 +34,6 @@ const GlobalFilter = ({ preGlobalFilteredRows, globalFilter, setGlobalFilter }) 
   )
 }
 
-const ChoosePages = ({ pageSize, setPageSize }) => {
-  return (
-    <div className="item">
-      <select
-        className="form-control"
-        value={pageSize}
-        onChange={e => {
-          setPageSize(Number(e.target.value))
-        }}
-        style={{ width: '120px', height: '38px' }}
-      >
-        {[2, 3, 6, 15, 20, 30].map(pageSize => (
-          <option key={pageSize} value={pageSize}>
-              Show {pageSize}
-          </option>
-        ))}
-      </select>
-    </div>
-  )
-}
-
 const PaymentTable = () => {
   const data = useMemo(() => [
       {
@@ -99,6 +78,125 @@ const PaymentTable = () => {
         time: '12:30',
         status: 'Un-Reconcilled'
       },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Un-Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Un-Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Un-Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Un-Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Un-Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
+      }
     ],
     [],
   );
@@ -180,7 +278,7 @@ const PaymentTable = () => {
     nextPage,
     previousPage,
     setPageSize,
-  } = useTable({ columns, data, initialState: { pageIndex: 0, pageSize: 2 } }, useFilters, useGlobalFilter, usePagination)
+  } = useTable({ columns, data, initialState: { pageIndex: 0, pageSize: 10 } }, useFilters, useGlobalFilter, usePagination)
 
   const showList = [
     { value: 1, label: 'All' }, 
@@ -194,9 +292,9 @@ const PaymentTable = () => {
     <>      
       <div className="table__topRow">
         <div className="show__pageSize">
-          <ShowDropdown list={[2, 3, 6, 15, 20, 30]} pageSize={pageSize} setPageSize={setPageSize} minWidth={70} />
+          <ShowDropdown list={[2, 3, 6, 15, 20, 30]} pageSize={pageSize} setPageSize={setPageSize} minWidth={80} />
+          <div className="text">out of {preGlobalFilteredRows.length} Payments</div>
         </div>
-        <div>Page{" "}{pageIndex + 1} of {pageOptions.length} Payments</div>
         <GlobalFilter
           preGlobalFilteredRows={preGlobalFilteredRows}
           globalFilter={globalFilter}
@@ -244,17 +342,17 @@ const PaymentTable = () => {
           <li className="page__item" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
             <a className="page__link">Pervious</a>
           </li>
-          <li className="page__item" onClick={() => previousPage()} disabled={!canPreviousPage}>
+          <li className={`page__item ${canPreviousPage ? 'active' : ''}`} onClick={() => previousPage()} disabled={!canPreviousPage}>
             <a className="page__link"><GoArrowLeft className="page__icon" /></a>
           </li>
-          <li className="page__item" onClick={() => nextPage()} disabled={!canNextPage}>
+          <li className={`page__item ${canNextPage ? 'active' : ''}`} onClick={() => nextPage()} disabled={!canNextPage}>
             <a className="page__link"><GoArrowRight className="page__icon" /></a>
           </li>
           <li className="page__item" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
             <a className="page__link">Next</a>
           </li>
-          <li className="page__item">
-            {/* <a className="page__link"> */}
+          {/* <li className="page__input">
+            Goto - {" "}
               <input
                 type="number"
                 defaultValue={pageIndex + 1}
@@ -262,10 +360,8 @@ const PaymentTable = () => {
                   const page = e.target.value ? Number(e.target.value) - 1 : 0
                   gotoPage(page)
                 }}
-                style={{ width: '100px', height: '20px' }}
               />
-            {/* </a> */}
-          </li>{' '}
+          </li> */}
         </ul>
       </div>
     </>

@@ -1,9 +1,9 @@
 import React from 'react'
 import AccountStat from './AccoutStat'
 import Chart from './Chart'
+import Table from './Table'
 
 import './Home.css'
-import Table from './Table'
 
 const Home = () => {
   return (
