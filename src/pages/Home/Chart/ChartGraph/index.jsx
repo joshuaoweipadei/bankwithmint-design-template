@@ -2,7 +2,7 @@ import React from 'react'
 import { Line } from '@reactchartjs/react-chart.js'
 
 const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun'],
   datasets: [
     {
       label: 'Orders',
