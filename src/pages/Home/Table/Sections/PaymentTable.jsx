@@ -1,26 +1,55 @@
 import React from 'react'
-import { useTable } from 'react-table'
+import { useTable } from 'react-table';
+import { BsCircleFill } from 'react-icons/bs';
+import { IoIosArrowDown } from 'react-icons/io';
+
+import imgIcon from '../../../../images/svg/svg3.svg';
+
 import './General.scss';
 
 const PaymentTable = () => {
   const data = React.useMemo(() => [
       {
-        col1: 'Hello',
-        col2: 'World',
-        col3: 'rocks',
-        col4: 'rocks',
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
       },
       {
-        col1: 'react-table',
-        col2: 'rocks',
-        col3: 'rocks',
-        col4: 'rocks',
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
       },
       {
-        col1: 'whatever',
-        col2: 'you want',
-        col3: 'rocks',
-        col4: 'rocks',
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Un-Reconcilled'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Pending'
+      },
+      {
+        type: 'Apple Mac Book 15" 250 SSD 12GB',
+        price: 73430,
+        tnx: 1234567890,
+        time: '12:30',
+        status: 'Un-Reconcilled'
       },
     ],
     []
@@ -29,30 +58,57 @@ const PaymentTable = () => {
   const columns = React.useMemo(() => [
       {
         Header: 'Item Type',
-        accessor: 'col1',
-      },
-      {
-        Header: 'Price',
-        accessor: 'col2',
-      },
-      {
-        Header: 'Transaction No',
-        accessor: 'col3',
-      },
-      {
-        Header: 'Time',
-        accessor: 'col4',
-      },
-      {
-        Header: 'b',
-        Cell: props => (
-          <button>link</button>
+        accessor: 'type',
+        Cell : ({ row }) => (
+          <div className="type__column">
+            <div className="imgContainer">
+              {/* <img src={imgIcon} alt="svg__icon"/> */}
+              <span>VW</span>
+            </div>
+            <h6>{row.original.type}</h6>
+          </div>
         )
       },
       {
-        Header: 'f',
-        Cell: props => (
-          <button>[rrrr</button>
+        Header: 'Price',
+        accessor: 'price',
+      },
+      {
+        Header: 'Transaction No',
+        accessor: 'tnx',
+      },
+      {
+        Header: 'Time',
+        accessor: 'time',
+      },
+      {
+        Header: 'Status',
+        accessor: 'status',
+        Cell: ({ row }) => {
+          let statusColor;
+          switch (row.original.status) {
+            case 'Pending':
+              statusColor = 'pending'
+              break;
+            case 'Un-Reconcilled':
+              statusColor = 'un_reconcilled'
+              break;
+            case 'Reconcilled':
+              statusColor = 'reconcilled'
+              break;
+          }
+          return (
+            <button className="status__btn">
+              <BsCircleFill className={`status__icon ${statusColor}`} />
+              <span className={`status__text ${statusColor}`}>{row.original.status}</span>
+            </button>
+          )
+        }
+      },
+      {
+        Header: " ",
+        Cell: () => (
+          <IoIosArrowDown className="arrow__icon" />
         )
       },
     ],
@@ -69,20 +125,12 @@ const PaymentTable = () => {
 
   return (
     <>
-      <table {...getTableProps} style={{border: '1px solid blue', width: '100%'}}>
+      <table {...getTableProps} className="table__data">
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
-                <th 
-                  {...column.getHeaderProps()} 
-                  style={{
-                    borderBottom: 'solid 3px red',
-                    background: 'aliceblue',
-                    color: 'black',
-                    fontWeight: 'bold',
-                  }}
-                >
+                <th {...column.getHeaderProps()}>
                   {column.render('Header')}
                 </th>
               ))}
@@ -96,14 +144,7 @@ const PaymentTable = () => {
               <tr {...row.getRowProps()}>
                 {row.cells.map(cell => {
                   return (
-                    <td 
-                      {...cell.getCellProps()}
-                      style={{
-                        padding: '10px',
-                        border: 'solid 1px gray',
-                        background: 'papayawhip',
-                      }}
-                    >
+                    <td {...cell.getCellProps()}>
                       {cell.render('Cell')}
                     </td>
                   )
